@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Capstone - YEAH!</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+
+    <body ng-app="capstone">
+            <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
+            <nav ng-include="'app/navigation/partials/search.html'"></nav>
+                <div ng-view></div>
+
+           
+
+    </body>
+    <script src="./lib/node_modules/angular/angular.min.js"></script>
+    <script src="./lib/node_modules/firebase/firebase.js"></script>
+    <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/app.config.js"></script>
+
+    <script src="./app/navigation/controllers/navCtrl.js"></script>
+    <script src="./app/auth/factories/authFactory.js"></script>
+    <script src="./app/auth/controllers/authCtrl.js"></script>
+    <script src="./app/events/controllers/eventCreateCtrl.js"></script>
+    <script src="./app/events/controllers/eventListCtrl.js"></script>
+    <script src="./app/events/factories/eventFactory.js"></script>
+    
+    
+    
+
+</html>

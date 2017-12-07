@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],   
+        "no-unused-vars": 0,
+        "no-console": 0,
+        "no-undef":0,
+        "no-debugger": 0
+    },
+    "globals": {
+        "$scope": true,
+        "angular": true,
+        "firebase": true
+    }
+}

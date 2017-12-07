@@ -1,0 +1,28 @@
+{
+  "name": "front-end-capstone",
+  "version": "1.0.0",
+  "description": "front-end-capstone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leahduvic/front-end-capstone.git"
+  },
+  "author": "Leah Duvic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leahduvic/front-end-capstone/issues"
+  },
+  "homepage": "https://github.com/leahduvic/front-end-capstone#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "gruntify-eslint": "^4.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "firebase": "^4.7.0"
+  }
+}

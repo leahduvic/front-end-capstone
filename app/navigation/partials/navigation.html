@@ -1,0 +1,24 @@
+<ul ng-controller="navCtrl">
+    <span>
+        <li>
+            <a href="/#!/non-auth">Home</a>
+        </li>
+    </span>
+        <li><a href="/#!/event/list">List Events</a></li>
+        <li><a href="">Non-Profit Organizations</a></li>
+            <li>
+                <span ng-if="isAuthenticated()">
+                    <a href="/#!/events/new">Add Events</a>
+                </span>
+            </li>
+        <!-- <li><span ng-include="'app/navigation/partials/search.html'"></span></li> -->
+    
+                <li class="align-right">
+                    <span ng-if="!isAuthenticated()">
+                        <a href="/#!/auth" ng-click="">Register/Log In</a>
+                    </span>
+                        <span ng-if="isAuthenticated()">
+                            <a href="#" ng-click="logout()">Logout</a>
+                        </span>
+                </li>
+</ul>

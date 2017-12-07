@@ -1,0 +1,16 @@
+<section>
+    Event Information:
+    <div>
+      Event Name: <input type="text" ng-model="newEvent.eventName" />
+    </div>
+    <div>
+      Event Location: <input type="text" ng-model="newEvent.eventLocation" />
+    </div>
+    <div>
+      Event Date: <input type="date" placeholder="MM-DD-YYYY" ng-model="newEvent.eventDate" />
+    </div>
+    <div>
+      Event Information: <input type="text" ng-model="newEvent.eventInfo" />
+    </div>
+    <button ng-click="addEvent()">Post Event</button>
+</section>
