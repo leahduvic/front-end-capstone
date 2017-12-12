@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3>Create A Listing For Your Non-Profit Organization!</h3>
+
+
+    <form ng-app="modal" ng-controller="addCtrl" class="container">
+        Organization Information:
+            <div>
+            Name: <input type="text" ng-model="newOrg.orgName" />
+            </div>
+            <div>
+            Website: <input type="text" ng-model="newOrg.website" placeholder="enter website address" />
+            </div>
+            <div>
+            Location: <input type="text" ng-model="newOrg.orgLocation" />
+            </div>
+            
+            <span>
+            <button ng-click="addOrg()">Submit</button>
+            </span>
+    </form>
+</div>

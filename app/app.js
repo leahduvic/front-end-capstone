@@ -30,11 +30,20 @@ angular.module("capstone").config(function ($routeProvider) {
 			controller: "eventCreateCtrl",
 			resolve: { isAuth }
 		})
-		// .when("/event/detail/:eventId", { 
-		// 	templateUrl: "app/employees/partials/detail.html",
-	// 	controller: "EmployeeDetailCtrl"
-	// resolve: { isAuth }
-	// })
+		.when("/events/eventList/:eventId", { 
+			templateUrl: "app/events/partials/eventList.html",
+			controller: "eventListCtrl",
+			resolve: { isAuth }
+		})
+		.when("/organization/list", {
+			templateUrl: "app/np/partials/npList.html",
+			controller: "npListCtrl"
+		})
+		.when("/np/add", {
+			templateUrl: "app/np/partials/npAdd.html",
+			controller: "addCtrl",
+			resolve: { isAuth }
+		})    
 		.when("/auth", {
 			templateUrl: "app/auth/partials/auth.html",
 			controller: "authCtrl"

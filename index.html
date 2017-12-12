@@ -10,7 +10,10 @@
     <body ng-app="capstone">
             <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
             <nav ng-include="'app/navigation/partials/search.html'"></nav>
-                <div ng-view></div>
+                <div ng-view>
+                   
+                </div>
+                
 
            
 
@@ -18,6 +21,7 @@
     <script src="./lib/node_modules/angular/angular.min.js"></script>
     <script src="./lib/node_modules/firebase/firebase.js"></script>
     <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    
     <script src="./app/app.js"></script>
     <script src="./app/app.config.js"></script>
 
@@ -27,6 +31,10 @@
     <script src="./app/events/controllers/eventCreateCtrl.js"></script>
     <script src="./app/events/controllers/eventListCtrl.js"></script>
     <script src="./app/events/factories/eventFactory.js"></script>
+    <script src="./app/np/controllers/addCtrl.js"></script>
+    <script src="./app/np/factories/npFactory.js"></script>
+    <script src="./app/np/controllers/npListCtrl.js"></script>
+
     
     
     

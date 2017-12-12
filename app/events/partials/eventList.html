@@ -1,12 +1,16 @@
 <div>
   <input type="text" ng-model="query" />
-</div>
+  </div>
+
   Current Events:
   <div ng-repeat="event in events">
-    <a href="#!/event/list/{{ event.id }}">{{ event.eventName }}</a><br>     
+    <a href="#!/event/list/{{ event.id }}">{{ event.eventName }}</a><br> 
+    <a href="{{event.website}}">{{ event.website }}</a><br>
     <a href="#!/event/list/">{{ event.eventLocation }}</a><br>
     <p>{{ event.eventDate | date:"fullDate" }}</p>
     <p>{{ event.eventInfo }}</p>
-    <button ng-if="hideButton" ng-click="delete()">Delete Post</button>
+    <span ng-show="event.isCurrentUser === true">
+    <button ng-click="deleteEvent(event)">Delete Post</button>
+    </span>
   </div>
 

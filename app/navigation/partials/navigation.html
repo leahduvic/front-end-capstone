@@ -3,22 +3,23 @@
         <li>
             <a href="/#!/non-auth">Home</a>
         </li>
-    </span>
         <li><a href="/#!/event/list">List Events</a></li>
-        <li><a href="">Non-Profit Organizations</a></li>
-            <li>
-                <span ng-if="isAuthenticated()">
-                    <a href="/#!/events/new">Add Events</a>
-                </span>
-            </li>
+        <li><a href="/#!/organization/list">Non-Profit Organizations</a></li>
+    </span>
+        <li>
+            <span ng-if="isAuthenticated()">
+                <a href="/#!/events/new">Add Events</a>
+                <a href="/#!/np/add">Add Non-Profit</a>
+            </span>
+        </li>
         <!-- <li><span ng-include="'app/navigation/partials/search.html'"></span></li> -->
     
-                <li class="align-right">
-                    <span ng-if="!isAuthenticated()">
-                        <a href="/#!/auth" ng-click="">Register/Log In</a>
+            <li class="align-right">
+                <span ng-if="!isAuthenticated()">
+                    <a href="/#!/auth" ng-click="">Register/Log In</a>
+                </span>
+                    <span ng-if="isAuthenticated()">
+                        <a href="#" ng-click="logout()">Logout</a>
                     </span>
-                        <span ng-if="isAuthenticated()">
-                            <a href="#" ng-click="logout()">Logout</a>
-                        </span>
-                </li>
+            </li>
 </ul>

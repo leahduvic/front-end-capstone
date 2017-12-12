@@ -1,0 +1,14 @@
+<div>
+    <input type="text" ng-model="query" />    
+</div>
+    
+    List of Organizations
+    <div ng-repeat="org in organization">
+        <a href="#!/organization/list/{{ org.id }}">{{ org.orgName }}</a><br> 
+        <a href="{{org.website}}">{{ org.website }}</a><br>
+        <a href="#!/organization/list/">{{ org.orgLocation }}</a><br>
+        <span ng-show="org.isCurrentUser === true">
+        <button ng-click="deleteOrg(org)">Delete</button>
+        </span>
+    </div>
+      

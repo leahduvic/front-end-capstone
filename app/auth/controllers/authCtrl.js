@@ -19,4 +19,5 @@ angular.module("capstone")
 			authFactory.registerWithEmail(registerNewUser).then(function(didRegister) {
 			})
 		}
+
 	})

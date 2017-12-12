@@ -1,6 +1,6 @@
 angular
 	.module("capstone")
-	.factory("eventFactory", function ($http, $location, authFactory) {
+	.factory("npFactory", function ($http, $location, authFactory) {
 		return Object.create(null, {
 			"cache": {
 				value: null,
@@ -10,7 +10,7 @@ angular
 				value: function () {
 					return $http({
 						method: "GET",
-						url: "https://capstone-37810.firebaseio.com/events/.json"
+						url: "https://capstone-37810.firebaseio.com/non-profits/.json"
 					})
 				}
 			},
@@ -18,17 +18,16 @@ angular
 				value: function () {
 					return $http({
 						method: "GET",
-						url: "https://capstone-37810.firebaseio.com/events/.json"
+						url: "https://capstone-37810.firebaseio.com/non-profits/.json"
 					}).then(response => {
 						const data = response.data
-						let user = authFactory.getUser()	
+
 						// Make an array of objects so we can use filters
 						this.cache = Object.keys(data).map(key => {
-							console.log(user)
 							let object = data[key]
 							console.log("obj", object)
 							object.id = key
-							if(object.uid === user.uid) {
+							if(object.uid === firebase.auth().currentUser.uid) {
 								object.isCurrentUser = true
 							}
 							return object
@@ -41,18 +40,18 @@ angular
 				value: function (key) {
 					return $http({
 						method: "GET",
-						url: `https://capstone-37810.firebaseio.com/events/${key}/.json`
+						url: `https://capstone-37810.firebaseio.com/non-profits/${key}.json`
 					}).then(response => {
 						return response.data
 					})
 				}
 			},
 			"add": {
-				value: function (event) {
+				value: function (org) {
 					return $http({
 						method: "POST",
-						url: "https://capstone-37810.firebaseio.com/events/.json",
-						data: event
+						url: "https://capstone-37810.firebaseio.com/non-profits/.json",
+						data: org
 					})
 				}
 			},
@@ -60,18 +59,18 @@ angular
 				value: function (key) {
 					return $http({
 						method: "DELETE",
-						url: `https://capstone-37810.firebaseio.com/events/${key}/.json`
+						url: `https://capstone-37810.firebaseio.com/non-profits/${key}/.json`
 					})
 				}
 			},
 			"find": {
 				value: function (searchString) {
-					const result = this.cache.find(emp => {
-						return emp.firstName.includes(searchString) ||
-                           emp.lastName.includes(searchString)
+					const result = this.cache.find(info => {
+						return info.orgName.includes(searchString) ||
+                       info.orgLocation.includes(searchString)
 					})
 					return result
 				}
 			}
 		})
-	})			
+	})
