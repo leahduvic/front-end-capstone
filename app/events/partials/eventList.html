@@ -1,13 +1,14 @@
 <div>
-  <input type="text" ng-model="query" />
+  Search:
+  <input type="text" ng-model="searchText" />
+  
   </div>
-
   Current Events:
-  <div ng-repeat="event in events">
+  <div ng-repeat="event in events | filter: searchText | filter: dateValue">
     <a href="#!/event/list/{{ event.id }}">{{ event.eventName }}</a><br> 
     <a href="{{event.website}}">{{ event.website }}</a><br>
     <a href="#!/event/list/">{{ event.eventLocation }}</a><br>
-    <p>{{ event.eventDate | date:"fullDate" }}</p>
+    <p>{{ event.eventDate | date:"longDate" }}</p>
     <p>{{ event.eventInfo }}</p>
     <span ng-show="event.isCurrentUser === true">
     <button ng-click="deleteEvent(event)">Delete Post</button>

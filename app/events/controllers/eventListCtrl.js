@@ -8,12 +8,21 @@ angular
 		console.log(currentUser, authenticated)
 		if (!currentUser) {
 			eventFactory.list().then(data => {
-				$scope.events = data.data
-				console.log(data)
+				for (const key in data.data) {
+					const ele = data.data[key]
+					$scope.events.push(ele)
+					console.log($scope.events)
+				}
 			})
 		} else {
 			eventFactory.listByUser().then(userData => {
-				$scope.events = userData
+				for (const key in userData) {
+					const ment = userData[key]
+					$scope.events.push(ment)
+					console.log($scope.events)
+						
+					
+				}
 				console.log(userData)
 			})
 		}
@@ -32,7 +41,7 @@ angular
 		}
 
 		$scope.search = function (find) {
-			
+
 		}
 	})
 	
