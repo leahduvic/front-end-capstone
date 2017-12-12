@@ -1,10 +1,10 @@
 <div>
   Search:
-  <input type="text" ng-model="searchText" />
+  <input type="text" ng-model="query" />
   
   </div>
   Current Events:
-  <div ng-repeat="event in events | filter: searchText | filter: dateValue">
+  <div ng-repeat="event in events | filter: query | orderBy:'-eventDate':true">
     <a href="#!/event/list/{{ event.id }}">{{ event.eventName }}</a><br> 
     <a href="{{event.website}}">{{ event.website }}</a><br>
     <a href="#!/event/list/">{{ event.eventLocation }}</a><br>

@@ -1,10 +1,10 @@
 <div>
-    Search by Keyword:
-    <input type="text" ng-model="searchText" />
+    Search:
+    <input type="text" ng-model="query" />
 </div>
     
     List of Organizations
-    <div ng-repeat="org in organizations | filter: searchText">
+    <div ng-repeat="org in organizations | filter: query">
         <a href="#!/organization/list/{{ org.id }}">{{ org.orgName }}</a><br> 
         <a href="{{org.website}}">{{ org.website }}</a><br>
         <a href="#!/organization/list/">{{ org.orgLocation }}</a><br>
