@@ -1,15 +1,14 @@
-<div>
-    Search:
-    <input type="text" ng-model="query" />
+<div class="form-style-7 search">
+    <input type="text" ng-model="query" placeholder="Search for an event"/>
 </div>
     
-    List of Organizations
-    <div ng-repeat="org in organizations | filter: query">
-        <a href="#!/organization/list/{{ org.id }}">{{ org.orgName }}</a><br> 
+    <h1 class="ribbon">List of Organizations</h1>
+    <div class="cards" ng-repeat="org in organizations | filter: query">
+        <h2 href="#!/organization/list/{{ org.id }}">{{ org.orgName }}</h2><br> 
         <a href="{{org.website}}">{{ org.website }}</a><br>
-        <a href="#!/organization/list/">{{ org.orgLocation }}</a><br>
+        <p href="#!/organization/list/">{{ org.orgLocation }}</p><br>
         <span ng-show="org.isCurrentUser === true">
-        <button ng-click="deleteOrg(org)">Delete</button>
+        <button type="submit" ng-click="deleteOrg(org)">Delete</button>
         </span>
     </div>
       

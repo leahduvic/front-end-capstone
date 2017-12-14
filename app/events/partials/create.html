@@ -1,19 +1,39 @@
-<section>
-    Event Information:
-    <div>
-      Event Name: <input type="text" ng-model="newEvent.eventName" />
-    </div>
-    <div>
-      Organization Website: <input type="text" ng-model="newEvent.website" placeholder="enter website address" />
-    </div>
-    <div>
-      Event Location: <input type="text" ng-model="newEvent.eventLocation" />
-    </div>
-    <div>
-      Event Date: <input type="date" ng-model="newEvent.eventDate" />
-    </div>
-    <div>
-      Event Information: <input type="text" ng-model="newEvent.eventInfo" />
-    </div>
-    <button ng-click="addEvent()">Post Event</button>
-</section>
+
+<form class="form-style-7">
+  <h1>Event Information</h1>
+    <ul>
+      <li>
+          <label for="name">Event Name:</label>
+          <input type="text" name="name" maxlength="100" ng-model="newEvent.eventName" />
+          <span>Enter name of the event.</span>
+      </li>
+      <li>
+          <label for="url">Organization Website:</label>
+          <input type="url" name="url" maxlength="100" ng-model="newEvent.website" placeholder="enter website address" />
+          <span>Your website address (eg: http://www.google.com)</span>
+      </li>
+      <li>
+          <label for="location">Event Location:</label>
+          <input type="text" ng-model="newEvent.eventLocation" />
+          <span>City, State of Event.</span>
+      </li>
+      <li>
+        <label for="date">Date of the Event:</label>
+        <input type="date" ng-model="newEvent.eventDate" />
+        <span>Enter the date of the Event.</span>
+      </li>
+      <li>
+          <label for="info">Event Information:</label>
+          <input type="text" name="info" size="35" ng-model="newEvent.eventInfo"></input>
+          <span>Let us know more about the Event.</span>
+      </li>
+      <li>
+          <!-- <button type="submit" value="Send This" ng-click="addEvent()">Post Event</button> -->
+          <input type="submit" value="Submit" ng-click="addEvent()">
+      </li>
+    </ul>
+</form>
+
+
+
+  

@@ -1,7 +1,20 @@
-<div>
-    If you would like to create an event, you first need to register and/or login. Otherwise, happy browsing.<br>
+<form class="form-style-7">
+<div class="register">
+    <h4>If you would like to create an event, you first need to register and/or login. Otherwise, happy browsing.</h4><br>
+    <ul>
+    <li>
     <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
+    </li>
+    <li>
     <input type="password" placeholder="Password" ng-model="auth.password">
-    <button ng-click="registerUser(auth)">Register </button>
-    <button ng-click="loginUser(auth)">Login</button>
+    </li>
+    <li>
+    <input type="register" value="Register" ng-click="registerUser(auth)">
+    <input type="login" value="Login" ng-click="loginUser(auth)">
+    </li>
+    </ul>
+    <!-- <button ng-click="registerUser(auth)">Register </button>
+    <button ng-click="loginUser(auth)">Login</button> -->
 </div>
+</form>
+

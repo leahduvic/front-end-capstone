@@ -1,21 +1,27 @@
-<div class="modal-header">
-    <h3>Create A Listing For Your Non-Profit Organization!</h3>
 
 
-    <form ng-app="modal" ng-controller="addCtrl" class="container">
-        Organization Information:
-            <div>
-            Name: <input type="text" ng-model="newOrg.orgName" />
-            </div>
-            <div>
-            Website: <input type="text" ng-model="newOrg.website" placeholder="enter website address" />
-            </div>
-            <div>
-            Location: <input type="text" ng-model="newOrg.orgLocation" />
-            </div>
-            
-            <span>
-            <button ng-click="addOrg()">Submit</button>
-            </span>
-    </form>
-</div>
+<form class="form-style-7">
+    <h1>Organization Information</h1>
+        <ul>
+            <li>
+                Name:
+                <input type="text" name="name" maxlength="100" ng-model="newOrg.orgName" />
+                <span>Name of your organization</span>
+            </li>
+            <li>
+                Website:
+                <input type="url" name="url" maxlength="100" ng-model="newOrg.website" placeholder="enter website address" />
+                <span>Your website address (eg: http://www.google.com)</span>
+            </li>
+            <li>
+                Location:
+                <input name="location" type="text" ng-model="newOrg.orgLocation" >
+                <span>City organization is located.</span>
+            </li>
+            <li>
+                <!-- <button type="submit" value="Send This" ng-click="addOrg()">Submit</button> -->
+                <input type="submit" value="Submit" ng-click="addOrg()">
+            </li>
+        </ul>
+</form>
+

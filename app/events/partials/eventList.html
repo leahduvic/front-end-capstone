@@ -1,17 +1,17 @@
-<div>
-  Search:
-  <input type="text" ng-model="query" />
-  
-  </div>
-  Current Events:
-  <div ng-repeat="event in events | filter: query | orderBy:'-eventDate':true">
-    <a href="#!/event/list/{{ event.id }}">{{ event.eventName }}</a><br> 
-    <a href="{{event.website}}">{{ event.website }}</a><br>
-    <a href="#!/event/list/">{{ event.eventLocation }}</a><br>
-    <p>{{ event.eventDate | date:"longDate" }}</p>
-    <p>{{ event.eventInfo }}</p>
-    <span ng-show="event.isCurrentUser === true">
-    <button ng-click="deleteEvent(event)">Delete Post</button>
-    </span>
-  </div>
+<div class="form-style-7 search">
+  <input type="text" ng-model="query" placeholder="Search for an event"/>
+</div>
+
+<h1 class="ribbon">Events Happening</h1>
+
+<div class="cards" ng-repeat="event in events | filter: query | orderBy:'-eventDate':true">
+      <h2 href="#!/event/list/{{ event.id }}">{{ event.eventName }}</h2><br> 
+      <a href="{{event.website}}">{{ event.website }}</a><br>
+      <p href="#!/event/list/">{{ event.eventLocation }}</p><br>
+      <p>{{ event.eventDate | date:"longDate" }}</p>
+      <p>{{ event.eventInfo }}</p>
+      <span ng-show="event.isCurrentUser === true">
+        <button type="submit" ng-click="deleteEvent(event)">Delete Post</button>
+      </span>
+</div>
 
