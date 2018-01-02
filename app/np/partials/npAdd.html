@@ -4,17 +4,17 @@
     <h1>Organization Information</h1>
         <ul>
             <li>
-                Name:
+                <label for="name">Name:</label>
                 <input type="text" name="name" maxlength="100" ng-model="newOrg.orgName" />
                 <span>Name of your organization</span>
             </li>
             <li>
-                Website:
-                <input type="url" name="url" maxlength="100" ng-model="newOrg.website" placeholder="enter website address" />
+                <label for="url">Website:</label>
+                <input type="url" name="url" maxlength="100" ng-model="newOrg.website" />
                 <span>Your website address (eg: http://www.google.com)</span>
             </li>
             <li>
-                Location:
+                <label for="location">Location:</label>
                 <input name="location" type="text" ng-model="newOrg.orgLocation" >
                 <span>City organization is located.</span>
             </li>
@@ -24,4 +24,5 @@
             </li>
         </ul>
 </form>
+
 

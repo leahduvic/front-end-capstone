@@ -1,9 +1,9 @@
 <div class="form-style-7 search">
-    <input type="text" ng-model="query" placeholder="Search for an event"/>
+    <input type="text" ng-model="query" placeholder="Search Non-Profits"/>
 </div>
     
     <h1 class="ribbon">List of Organizations</h1>
-    <div class="cards" ng-repeat="org in organizations | filter: query">
+    <div class="cards" class="grid" ng-repeat="org in organizations | filter: query">
         <h2 href="#!/organization/list/{{ org.id }}">{{ org.orgName }}</h2><br> 
         <a href="{{org.website}}">{{ org.website }}</a><br>
         <p href="#!/organization/list/">{{ org.orgLocation }}</p><br>
