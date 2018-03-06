@@ -1,35 +1,54 @@
-<div class="nav">
-    <ul ng-controller="navCtrl">
-        <span>
-            <li>
-                <i class="fa fa-home" aria-hidden="true"></i> <a href="/#!/non-auth">Home</a>
-            </li>
-                
-         
-                <li><i class="fa fa-list" aria-hidden="true"></i> <a href="/#!/event/list">List of Events</a></li>
-                <li><i class="fa fa-list" aria-hidden="true"></i> <a href="/#!/organization/list">Non-Profit Organizations</a></li>
-           
-        </span>    
-            
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <i class="fa fa-bars fa-2x"></i>
+    </button>
+</div>
+
+<div class="nav" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul ng-controller="navCtrl" class="nav navbar-nav">
+
+        <li class="active">
+            <a href="/#!/non-auth">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+
         <li>
-            <span ng-if="isAuthenticated()"><i class="fa fa-plus-square" aria-hidden="true"></i>
-                <a href="/#!/events/new">Add an Event</a>
-            </span>
+            <a href="/#!/event/list">
+                <i class="fa fa-list" aria-hidden="true"></i> List of Events</a>
         </li>
         <li>
-            <span ng-if="isAuthenticated()"><i class="fa fa-plus-square" aria-hidden="true"></i>
-                <a href="/#!/np/add">Add a Non-Profit</a>
-            </span>
+            <a href="/#!/organization/list">
+                <i class="fa fa-list" aria-hidden="true"></i>Non-Profit Organizations</a>
         </li>
-                <!-- <li><span ng-include="'app/navigation/partials/search.html'"></span></li> -->
-            
-            <li class="align-right">
-                <span ng-if="!isAuthenticated()">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> <a href="/#!/auth" ng-click="">Register/Log In</a>
-                </span>
-                    <span ng-if="isAuthenticated()">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i> <a href="#" ng-click="logout()">Logout</a>
-                    </span>
-            </li>
+
+
+
+
+        <li ng-if="isAuthenticated()">
+            <a href="/#!/events/new">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>Add an Event</a>
+        </li>
+
+
+        <li ng-if="isAuthenticated()">
+            <a href="/#!/np/add">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                Add a Non-Profit</a>
+        </li>
+
+
+
+        <li ng-if="!isAuthenticated()">
+            <a href="/#!/auth" ng-click="">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Register/Log In</a>
+        </li>
+        <li ng-if="isAuthenticated()">
+            <a href="#" ng-click="logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+        </li>
+
     </ul>
 </div>

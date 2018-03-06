@@ -1,20 +1,21 @@
-<form class="form-style-7">
-<div class="register">
-    <h4>If you would like to create an event, you first need to register and/or login. Otherwise, happy browsing.</h4><br>
-    <ul>
-    <li>
-    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
-    </li>
-    <li>
-    <input type="password" placeholder="Password" ng-model="auth.password">
-    </li>
-    <li>
-    <input type="register" value="Register" ng-click="registerUser(auth)">
-    <input type="login" value="Login" ng-click="loginUser(auth)">
-    </li>
-    </ul>
-    <!-- <button ng-click="registerUser(auth)">Register </button>
-    <button ng-click="loginUser(auth)">Login</button> -->
+<div class="content-block" id="contact">
+    <div class="overlay-3">
+        <header class="block-heading cleafix text-center">
+            <!-- <h1>Contact</h1> -->
+        </header>
+        <div class="block-content text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 wow animated fadeInLeft">
+                        <form class="contact-form" action="form.php">
+                            <input type="email" name="email" placeholder="Email address" ng-model="auth.email" autofocus required>
+                            <input type="password" name="password" placeholder="Password" ng-model="auth.password" required>
+                            <input type="button" class="btn btn-primary" type="register" value="Register" ng-click="registerUser(auth)">
+                            <input id="myInput" type="button" type="login" class="btn btn-primary" value="Login" ng-click="loginUser(auth)">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</form>
-
