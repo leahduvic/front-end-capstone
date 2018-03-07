@@ -1,17 +1,21 @@
-<div class="form-style-7 search">
-  <input type="text" ng-model="query" placeholder="Search Events"/>
+<div id="portfolio" class="form-style-7 search">
+  <input type="text" ng-model="query" placeholder="Search Events" />
 </div>
-
-<h1 class="ribbon">Events Happening</h1>
-
-<div class="cards" class="grid" ng-repeat="event in events | filter: query | orderBy:'-eventDate':true">
-      <h2 href="#!/event/list/{{ event.id }}">{{ event.eventName }}</h2><br> 
-      <a href="{{event.website}}">{{ event.website }}</a><br>
-      <p href="#!/event/list/">{{ event.eventLocation }}</p><br>
-      <p>{{ event.eventDate | date:"longDate" }}</p>
-      <p>{{ event.eventInfo }}</p>
-      <span ng-show="event.isCurrentUser === true">
-        <button type="submit" ng-click="deleteEvent(event)">Delete Post</button>
-      </span>
-</div>
-
+    <h1 class="ribbon block-heading cleafix">Events Happening</h1>
+    <div class="isotope portfolio-items">
+        
+            <div class="element-item grid" ng-repeat="event in events | filter: query | orderBy:'-eventDate':true">
+              <h2 href="#!/event/list/{{ event.id }}">{{ event.eventName }}</h2>
+              <br>
+              <a href="{{event.website}}">{{ event.website }}</a>
+              <br>
+              <p href="#!/event/list/">{{ event.eventLocation }}</p>
+              <br>
+              <p>{{ event.eventDate | date:"longDate" }}</p>
+              <p>{{ event.eventInfo }}</p>
+          <span ng-show="event.isCurrentUser === true">
+            <button type="submit" ng-click="deleteEvent(event)">Delete Post</button>
+          </span>
+            </div>
+        
+    </div>
